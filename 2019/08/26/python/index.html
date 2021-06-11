@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <link rel="icon" type="image/png" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="EDGsheryl">
+  <meta name="keywords" content="">
+  <title>Python 、Python 代码优化及思考 ~ 冰糖雪梨</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>冰糖雪梨</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/python.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 八月 26日 2019, 6:17 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.8k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      6 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>其实在写 Python 代码前，我并没有学过怎么写 Python，实习写了大量 Python 代码的时候也没有系统学习过 Python 这门编程语言。</p>
+<p>但是并不影响我使用他。</p>
+<a id="more"></a>
+
+<p>不是说我在吹嘘自己，而是这门语言上手起来真的很简单。</p>
+<p>这门语言给我最大的感触就是他简单易上手，但是这个简单往往不是看上去的那样简单。</p>
+<p>Python 是一个解释型语言，程序执行时由解释器来解释执行。</p>
+<p>Python 的类型是动态类型，但是 Python 是强类型语言。</p>
+<p>说点题外话，我之前和高中同学探讨过家教的问题。</p>
+<p>我也思考过自己如果做家教肯定教不了物理（大学物理挂科）化学（高中天天被班主任锤）生物（忘光了），初中 小学数学么勉强教一教。实习的同事说他的女儿报了很多班，又是小提琴班，又是健脑班的。</p>
+<p>我一想我还是比较擅长写程序的，如果我教小学生写 Python 肯定没问题吧。</p>
+<p>教会一个小孩子写 Python，需要多少节课呢？</p>
+<p>一开始我觉得一天就行了，考虑到有些人刚开始接触，一个星期总没问题了吧。</p>
+<p>什么叫做教会，教会的标准是什么？</p>
+<p>我觉得带他们入门就可以了，比如说会写一些简单的爬虫，或者构造一个简单的后台系统。</p>
+<p>这样就会需要教他们一些网络的基本知识了，然后数据库的 CURD 也得会吧。</p>
+<p>这样子算下来，一周时间能教会多少，我的心里就有了一丝疑问。但是我并没有试验过，也不感兴趣。</p>
+<p>我并不是鼓吹计算机网络、操作系统、数据库等等的知识多么多么重要，本文也不探讨这些问题，不会这些不代表会写代码，会这些也不代表写得来代码。会不会写代码与会不会这些基础知识是没有联系的，会不会写代码和能不能写出高质量代码也是不相关的，会不会基础知识与能不能写出高质量代码也不能扯上关系。你的代码质量高不高也不是你说了算的（2333）</p>
+<p>看来教育也是一件令人头疼的事情呢。</p>
+<p>扯了半天，我想回到我想总结的问题上。</p>
+<p>我先简单介绍和整理一下几个相关的概念吧。</p>
+<h2 id="进程-Process"><a href="#进程-Process" class="headerlink" title="进程 Process"></a>进程 Process</h2><p>进程（Process）在教课书上告诉我，进程是程序的一次执行。</p>
+<p>一个进程拥有自己的 text region、data region、stack region。</p>
+<p>在我看来，进程的概念是为了优化 CPU 等计算资源的而产生的。</p>
+<p>进程切换时，CPU 的寄存器等上下文会被切换，所以就需要进程内部存下这个值。</p>
+<p>随着硬件的提升，我们需要在软件层面对硬件进行多路复用，这才导致了进程的出现和操作系统的发展。</p>
+<p>如果说没有进程这个概念，或者说进程不切换，你的双核电脑就只能边听歌边写代码。</p>
+<p>而不能在后台再下载个小电影啥的。显然不是很合理。</p>
+<h2 id="线程-Thread"><a href="#线程-Thread" class="headerlink" title="线程 Thread"></a>线程 Thread</h2><p>假设一个程序的一次运行，即一个进程占用了一个 CPU，完全独占，我需要这个程序去运算 100 次。</p>
+<p>比如说抓取 100 个网页的信息。</p>
+<p>网络请求是很慢的，起码没有 CPU 处理这些数据快，比如说你访问网络环境差的地方的网站，比你渲染这个页面慢多了。</p>
+<p>比如说你烧一百壶水量不等的开水，你可以按照某种顺序一壶一壶烧，烧开，倒水，换一壶；也可以一次性烧 100 壶水，然后谁开了，就把水倒出来。</p>
+<p>显然后面一种情况，绝大多数情况下更快一点。</p>
+<p>线程（Thread）其实就是对进程的一个更小粒度的划分。</p>
+<h2 id="多进程-多线程"><a href="#多进程-多线程" class="headerlink" title="多进程 多线程"></a>多进程 多线程</h2><p>多进程、多线程描述的是，同样的一堆实例干同一件事的情况。</p>
+<p>一台机器跑多个相同脚本是多进程，多台机器跑同一个相同脚本也是多进程。</p>
+<p>因为往往进程与进程之间不存在耦合关系。</p>
+<p>假设进程之间需要沟通，共享一些东西。</p>
+<p>我们推荐使用多线程的方式来进行。</p>
+<p>共享的资源往往能够被直接访问到，因为他们<strong>可以</strong>拥有相同的一些上下文。但是一台电脑的资源是有限的，我们一台电脑不可能有无限多的 CPU ，所以我们常常需要电脑与电脑之间通讯才能达成协作，这个时候又需要多进程和进程间通讯来完成了。</p>
+<p>选择多进程和多线程是一件按需的事情，往往也没有谁好谁不好的问题。</p>
+<p>这之中的关系其实有点像多核 CPU 和 单核 CPU 的类比。</p>
+<p>多核 CPU 可以访问一块内存，而多个单核 CPU （这里需要看成是不同机器）之间需要通过其他方式（网络请求）来达到相同的目的。</p>
+<p>我们可以发现，在硬件条件允许的情况下，根本不用考虑这个问题，但是现实情况就是我们需要通过有限的硬件来优化结果。</p>
+<h2 id="GIL"><a href="#GIL" class="headerlink" title="GIL"></a>GIL</h2><blockquote>
+<p>全局解释器锁（英语：Global Interpreter Lock，缩写 GIL），是计算机程序设计语言解释器用于同步线程的一种机制，它使得任何时刻仅有一个线程在执行。即便在多核心处理器上，使用 GIL 的解释器也只允许同一时间执行一个线程。常见的使用 GIL 的解释器有 CPython 与 Ruby MRI。</p>
+</blockquote>
+<p>咋一看 GIL 是会影响性能的。</p>
+<p>然而 Python 并不一定有 GIL，GIL 并不是 Python 的特性，但由于 CPython 是大部分环境下默认的 Python 执行环境，所以一般大家的 Python 都会有 GIL。</p>
+<p>有关 GIL 的资料有很多（企图 抛砖引玉 偷懒）。</p>
+<p>解决方案之一呢，就是使用 multiprocess 替代 thread，但是就会出现之前说到的上下文不同的问题，会导致一些变量无法共享（需要非常痛苦的多线程 code 来解决）。</p>
+<h2 id="JIT"><a href="#JIT" class="headerlink" title="JIT"></a>JIT</h2><p>JIT 是 Just-in-time compilation 的缩写。</p>
+<p>通常程序有两种方式执行，静态编译和动态解释。</p>
+<p>前者的效率往往比后者要高。</p>
+<p>所以 JIT 技术就大概是将动态解释变成静态编译。</p>
+<p>例如如下代码，其中包含了一些计算，优化起来的效果是比较好的。</p>
+<pre><code class="python">def add(num_a, num_b):
+    return num_a + num_b</code></pre>
+<p>但是 JIT 往往在 I/O 密集的代码段中的表现就不那么尽如人意了。</p>
+<pre><code class="python">def read_file(file_name):
+    with open(file_name) as f:
+        for line in f:
+            print(line)</code></pre>
+<p>如果你的代码想在不更改任何一行代码的情况下，做一些优化，不妨尝试一下 PyPy。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/Python">Python</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  ');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Python 、Python 代码优化及思考&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

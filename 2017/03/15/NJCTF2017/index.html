@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <link rel="icon" type="image/png" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="EDGsheryl">
+  <meta name="keywords" content="">
+  <title>NJCTF2017 线上赛 Learning Note ~ 冰糖雪梨</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>冰糖雪梨</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/njctf2017.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 三月 15日 2017, 1:51 凌晨
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.5k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      7 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>比赛的时候，只有我一个人做题<br>而做题的时候只做了 misc<br>即使 misc 只做了签到题目 QWQ</p>
+<a id="more"></a>
+
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h2><p>随意注册账户，进去瞟一眼，需要 admin。</p>
+<p>利用 php 和数据库中的字段长度进行截断，注册一个 admin +（好多空格）+（杂七杂八的东西）</p>
+<p>会覆盖 admin 的密码</p>
+<p>然后拿刚刚注册的密码用 admin 登录就可以了</p>
+<p>（我以为第一题就是 sqli）</p>
+<h2 id="Get-Flag"><a href="#Get-Flag" class="headerlink" title="Get Flag"></a>Get Flag</h2><p>用 flag=XXX</p>
+<p>F12 可以看到 cat xxx：No such file or directory</p>
+<p>我第一反应以为是 LFI，然后就开始找目录下有什么</p>
+<p>结果是命令执行漏洞。。。</p>
+<pre><code>userinput= 1 %26 find
+或者
+userinput= 1 %26 ls /</code></pre><p>都可以看到 flag</p>
+<p>然后 cat $flag</p>
+<h2 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h2><p>进去第一眼就看到了 Ruby。。然后马上就放弃了。。</p>
+<p>哇。</p>
+<p>别人的 writeup 里说直接拿源码。。。</p>
+<p>哇。。。</p>
+<p>源码呢QAQ</p>
+<p>关注到 schema.rb 文件的 user 表，有一个 t.boolean “admin”</p>
+<p>在注册的时候传入参数， user[admin]=1</p>
+<p>之后在 /user 页面源代码找到了 flag</p>
+<h2 id="Come-On"><a href="#Come-On" class="headerlink" title="Come On"></a>Come On</h2><p>随便搜一下</p>
+<p>发现多了 ?key=1</p>
+<p>应该是一道 sqli，宽字符注入</p>
+<p>发现 like 没被过滤，构造 %df’||(select(hex(flag))from(flag))like(0x)%23 去模糊匹配</p>
+<p>这时候就需要写个脚本去打完</p>
+<h2 id="Chall-I"><a href="#Chall-I" class="headerlink" title="Chall I"></a>Chall I</h2><p>前端和小姨子跑了，没办法扫描都得从头学起，干脆前后端都用 js 写吧</p>
+<p>界面上都没有可以点的东西，唉= =</p>
+<pre><code>https://www.smrrd.de/nodejs-hacking-challenge-writeup.html</code></pre><p>还有的队伍，去 GitHub 上找 bibibibi</p>
+<p>然后 /admin 里去登录，用纯数字去登录 N 次，大概原理是 js 的 Buffer 遇到数字参数时会将内存数据泄露出来。</p>
+<p>payload=ximaz</p>
+<p>从 flag 给我们的 NJCTF{P1e45e_s3arch_th1s_s0urce_cod3_0lddriver} 确实是找源代码</p>
+<h2 id="Wallet"><a href="#Wallet" class="headerlink" title="Wallet"></a>Wallet</h2><p>这题听说要花钱解密</p>
+<p>源码在根目录下 /<a href="http://www.zip" target="_blank" rel="noopener">www.zip</a>  (没做过谁知道卧槽。。。)</p>
+<p>然后弱密码是 njctf2017…还有 php 混淆。。。</p>
+<p>然后是 php 的弱类型 </p>
+<pre><code>https://www.whitehatsec.com/blog/magic-hashes/</code></pre><p>然后 sqli </p>
+<p>我后来做的时候，还去 db.php 里搞。。。是在 admin.php</p>
+<p>id=0 不能大于0，否则就查出东西了。。</p>
+<h2 id="Guess"><a href="#Guess" class="headerlink" title="Guess"></a>Guess</h2><pre><code>php://filter/convert.base64-encode/resource=</code></pre><pre><code class="php">&lt;?php
+error_reporting(0);
+function show_error_message($message)
+{
+    die(&quot;&lt;div class=\&quot;msg error\&quot; id=\&quot;message\&quot;&gt;
+    &lt;i class=\&quot;fa fa-exclamation-triangle\&quot;&gt;&lt;/i&gt;$message&lt;/div&gt;&quot;);
+}
+
+function show_message($message)
+{
+    echo(&quot;&lt;div class=\&quot;msg success\&quot; id=\&quot;message\&quot;&gt;
+    &lt;i class=\&quot;fa fa-exclamation-triangle\&quot;&gt;&lt;/i&gt;$message&lt;/div&gt;&quot;);
+}
+
+function random_str($length = &quot;32&quot;)
+{
+    $set = array(&quot;a&quot;, &quot;A&quot;, &quot;b&quot;, &quot;B&quot;, &quot;c&quot;, &quot;C&quot;, &quot;d&quot;, &quot;D&quot;, &quot;e&quot;, &quot;E&quot;, &quot;f&quot;, &quot;F&quot;,
+        &quot;g&quot;, &quot;G&quot;, &quot;h&quot;, &quot;H&quot;, &quot;i&quot;, &quot;I&quot;, &quot;j&quot;, &quot;J&quot;, &quot;k&quot;, &quot;K&quot;, &quot;l&quot;, &quot;L&quot;,
+        &quot;m&quot;, &quot;M&quot;, &quot;n&quot;, &quot;N&quot;, &quot;o&quot;, &quot;O&quot;, &quot;p&quot;, &quot;P&quot;, &quot;q&quot;, &quot;Q&quot;, &quot;r&quot;, &quot;R&quot;,
+        &quot;s&quot;, &quot;S&quot;, &quot;t&quot;, &quot;T&quot;, &quot;u&quot;, &quot;U&quot;, &quot;v&quot;, &quot;V&quot;, &quot;w&quot;, &quot;W&quot;, &quot;x&quot;, &quot;X&quot;,
+        &quot;y&quot;, &quot;Y&quot;, &quot;z&quot;, &quot;Z&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;);
+    $str = &#39;&#39;;
+
+    for ($i = 1; $i &lt;= $length; ++$i) {
+        $ch = mt_rand(0, count($set) - 1);
+        $str .= $set[$ch];
+    }
+
+    return $str;
+}
+
+session_start();
+
+
+
+$reg=&#39;/gif|jpg|jpeg|png/&#39;;
+if (isset($_POST[&#39;submit&#39;])) {
+
+    $seed = rand(0,999999999);
+    mt_srand($seed);
+    $ss = mt_rand();
+    $hash = md5(session_id() . $ss);
+    setcookie(&#39;SESSI0N&#39;, $hash, time() + 3600);
+
+    if ($_FILES[&quot;file&quot;][&quot;error&quot;] &gt; 0) {
+        show_error_message(&quot;Upload ERROR. Return Code: &quot; . $_FILES[&quot;file-upload-field&quot;][&quot;error&quot;]);
+    }
+    $check1 = ((($_FILES[&quot;file-upload-field&quot;][&quot;type&quot;] == &quot;image/gif&quot;)
+            || ($_FILES[&quot;file-upload-field&quot;][&quot;type&quot;] == &quot;image/jpeg&quot;)
+            || ($_FILES[&quot;file-upload-field&quot;][&quot;type&quot;] == &quot;image/pjpeg&quot;)
+            || ($_FILES[&quot;file-upload-field&quot;][&quot;type&quot;] == &quot;image/png&quot;))
+        &amp;&amp; ($_FILES[&quot;file-upload-field&quot;][&quot;size&quot;] &lt; 204800));
+    $check2=!preg_match($reg,pathinfo($_FILES[&#39;file-upload-field&#39;][&#39;name&#39;], PATHINFO_EXTENSION));
+
+
+    if ($check2) show_error_message(&quot;Nope!&quot;);
+    if ($check1) {
+        $filename = &#39;./uP1O4Ds/&#39; . random_str() . &#39;_&#39; . $_FILES[&#39;file-upload-field&#39;][&#39;name&#39;];
+        if (move_uploaded_file($_FILES[&#39;file-upload-field&#39;][&#39;tmp_name&#39;], $filename)) {
+            show_message(&quot;Upload successfully. File type:&quot; . $_FILES[&quot;file-upload-field&quot;][&quot;type&quot;]);
+        } else show_error_message(&quot;Something wrong with the upload...&quot;);
+    } else {
+        show_error_message(&quot;only allow gif/jpeg/png files smaller than 200kb!&quot;);
+    }
+}
+?&gt;</code></pre>
+<p>可以把自己的 session_id 填进去 也可以干脆清空，这样就只有 $ss 了，然后就能根据 session 把 $seed 跑出来了，然后就能跑出文件目录了。</p>
+<p>用 php 跑吧，如果用 python 跑可能跑不出来</p>
+<p>有点怪怪的，要吃饭去上课了。。不管了</p>
+<p>学会了 php 伪协议和一句话木马和 getshell 是什么 QWQ</p>
+<h2 id="Be-Admin"><a href="#Be-Admin" class="headerlink" title="Be Admin"></a>Be Admin</h2><p>首先是 ./index.php.bak 源码泄露</p>
+<p>然后是 padding oracle 攻击</p>
+<p>鉴于没学密码学相关只是，就暂时先放一下</p>
+<h2 id="Text-Wall"><a href="#Text-Wall" class="headerlink" title="Text Wall"></a>Text Wall</h2><p>源码泄露 ， ./.index.php.swo</p>
+<p>ctf 的套路好多。。。web 是需要积累的。嗯。</p>
+<p>还要知道反序列化数据</p>
+<pre><code>return highlight_file(&#39;hiehiehie.txt&#39;, true).highlight_file($this-&gt;source, true);
+
+
+list=&quot;f3a6de2497f71356a3995e26a1f4f64ae48e80b1a:1:{i:0;O:8:&quot;filelist&quot;:1:{s:6:&quot;source&quot;;s:9:&quot;index.php&quot;;}}&quot;</code></pre><p>读出 index.php，里面有 flag 的地址，再读 flag。</p>
+<h2 id="Pictures’-wall"><a href="#Pictures’-wall" class="headerlink" title="Pictures’ wall"></a>Pictures’ wall</h2><p>我还说第一步 sqli，结果直接进去。。。</p>
+<p>发现我们不是 root</p>
+<p>我居然换了个 root，进去没用</p>
+<p>看 wp，是改 header，host=127.0.0.1</p>
+<p>然后上传图片 trick  </p>
+<pre><code>&lt;script language=&quot;php&quot;&gt;
+system($_POST[va]);
+&lt;/script&gt;</code></pre><p>做题有些时候不要过于依赖浏览器，用 burp QwQ。</p>
+<p>还有毒瘤们把 flag 删掉了！！！QAQ</p>
+<h2 id="Chall-2"><a href="#Chall-2" class="headerlink" title="Chall 2"></a>Chall 2</h2><p>chall 1 的基础上</p>
+<p>用源码搭建本地服务器，获得 admin 的 cookies</p>
+<h2 id="Be-Logical"><a href="#Be-Logical" class="headerlink" title="Be Logical"></a>Be Logical</h2><p>504 Gateway Time-out</p>
+<p>可能弱者不配看题吧。</p>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h2 id="check-in"><a href="#check-in" class="headerlink" title="check in"></a>check in</h2><p>来QQ群签到啦</p>
+<h2 id="Knock"><a href="#Knock" class="headerlink" title="Knock"></a>Knock</h2><p>是单值对应密码？？？</p>
+<p>丢 quipqiup，然后找出对应关系，然后根据….<em>…</em></p>
+<p>..对应了单词_对应分割</p>
+<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><p>100 的都看不懂</p>
+<h1 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h1><p>各位哥哥姐姐们，有 libc 嘛 QwQ</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>就像学长说的，web 是需要积累的。</p>
+<p>但是感觉并没有 ctf 留着他们的服务器，给我们看着 writeup 再次尝试。。</p>
+<p>有点心塞。</p>
+<p>做题的时候 总感觉好像就卡在那儿，差一点点，出来看方向不对</p>
+<p>不会 ctf，不会开发，不会文化课，感觉啥都不会，天天混着混着，感觉越来越迷茫了。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/CTF">CTF</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  ');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "NJCTF2017 线上赛 Learning Note&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

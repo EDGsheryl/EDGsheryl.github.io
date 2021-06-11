@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <link rel="icon" type="image/png" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="EDGsheryl">
+  <meta name="keywords" content="">
+  <title>JetBrains Quest Challenge 3 ~ 冰糖雪梨</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>冰糖雪梨</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/quest-title-3.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期六, 三月 14日 2020, 5:43 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    580 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>第三弹 Quest，这一次的难度比较高，最后的奖品是一个 20% OFF 的 Discounts Code，可能就没有之前那么香</p>
+<a id="more"></a>
+
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/annualreport-2019.png" srcset="undefined" alt=""></p>
+<p>JetBrains 成立 20 周年了，如果不去了解 JetBrains 的历史，也不会知道 IDEA 是 2000 年推出的 IDE</p>
+<p>IDE 将一些工具集成化、简化、可视化，从而达到降低学习成本、提高工作效率，感谢 JetBrains 的 Innovation，为 Coding 带来更多乐趣</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/JetBrains-Products.png" srcset="undefined" alt=""></p>
+<p>第三轮的题目同样来自一则推文</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/twitter3.png" srcset="undefined" alt=""></p>
+<h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>特征其实不是很明显，就 base64 一下吧</p>
+<pre><code class="Text">Have you seen the post on our Instagram account?</code></pre>
+<p>(是一个导流广告 x)</p>
+<h1 id="Instagram"><a href="#Instagram" class="headerlink" title="Instagram"></a>Instagram</h1><p>吃下这发安利，我们可以到对应页面看到这个 post</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/Instagram.png" srcset="undefined" alt=""></p>
+<pre><code class="text">Welcome to the final Quest! You should start on the Kotlin Playground: https://jb.gg/kotlin_quest
+P.S. If you don’t know about the #JetBrainsQuest, it’s not too late to find out.</code></pre>
+<h1 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h1><p>实际上这个 n 需要多试几次，因为之前那个移位密码也有很多 #，实际上应该和之前一样是 <code>n=3</code></p>
+<pre><code class="Kotlin">fun main() {
+   val s = &quot;Zh#kdyh#ehhq#zrunlqj#552:#rq#wkh#ylghr#iru#wkh#iluvw#hslvrgh#ri#wkh#SksVwrup#HDS1#Li#zh#jdyh#|rx#d#foxh/#lw#zrxog#eh#hdv|#dv#sl1&quot;
+
+   val n: Int = 3;
+   for (c in s) {
+       print(c - n)
+   }
+}</code></pre>
+<p>然后解出</p>
+<pre><code class="text">We have been working 22/7 on the video for the first episode of the PhpStorm EAP. If we gave you a clue, it would be easy as pi.</code></pre>
+<h1 id="Pi-equals-to-3-14…"><a href="#Pi-equals-to-3-14…" class="headerlink" title="Pi equals to 3.14…."></a>Pi equals to 3.14….</h1><p>指向了一个视频，我 0.25 倍速度也没看出个所以然，看了别人才知道是一个 URL 被改了，改了的 URL 是最终的线索</p>
+<p>视频跳之 3:14 有蜜汁转场效果</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OtQuAr3n87c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><a href="https://jb.gg/31415926" target="_blank" rel="noopener">https://jb.gg/31415926</a></p>
+<h1 id="猝不及防的快问快答"><a href="#猝不及防的快问快答" class="headerlink" title="猝不及防的快问快答"></a>猝不及防的快问快答</h1><p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/questions.png" srcset="undefined" alt=""></p>
+<p>答完之后会得到下一步的线索</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/quiz-done.png" srcset="undefined" alt=""></p>
+<h1 id="藏头诗"><a href="#藏头诗" class="headerlink" title="藏头诗"></a>藏头诗</h1><pre><code class="text">Not Everything Today Does All You Could Ask. Lessons Learned From Other Relevant Solutions, Possibly Even Another Kind Emerge. Risking Sometimes Being Liberal Or Generous Proves Ordinary Simple Tests Infinitely More Annoying. Get Examining Hidden Initial Designated Early Symbols. They Have Everything Needed, Except Xerox, To Completely Level Up Everything.</code></pre>
+<p>一段让人摸不着头脑的文字，看了网友表示这是 acronym</p>
+<pre><code class="text">.Net day call for speakers blog post image hides the next clue</code></pre>
+<h1 id="NET-DAY"><a href="#NET-DAY" class="headerlink" title=".NET DAY"></a>.NET DAY</h1><p>通过搜索引擎找到这个页面</p>
+<p><a href="https://blog.jetbrains.com/dotnet/2020/02/13/jetbrains-net-day-online-2020-call-speakers/" target="_blank" rel="noopener">https://blog.jetbrains.com/dotnet/2020/02/13/jetbrains-net-day-online-2020-call-speakers/</a></p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/clues-in-pic.png" srcset="undefined" alt=""></p>
+<p>线索很好找， <code>you_are_looking_for_build_201-6303</code></p>
+<h1 id="Tip-today"><a href="#Tip-today" class="headerlink" title="Tip today"></a>Tip today</h1><p>这一步就比较硬核了，你需要下载安装，好大啊。。。</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/eap.png" srcset="undefined" alt=""></p>
+<p>然后算出答案想必不是什么难事吧！</p>
+<h1 id="神秘代码"><a href="#神秘代码" class="headerlink" title="神秘代码"></a>神秘代码</h1><p>46023125</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/CTF">CTF</a>
+                
+                  <a class="hover-with-bg" href="/tags/JetBrains">JetBrains</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  ');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "JetBrains Quest Challenge 3&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

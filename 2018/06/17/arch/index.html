@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <link rel="icon" type="image/png" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="EDGsheryl">
+  <meta name="keywords" content="">
+  <title>Archlinux 安装指北 ~ 冰糖雪梨</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>冰糖雪梨</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/arch/title.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期日, 六月 17日 2018, 9:41 上午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    618 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>这是一份 Archlinux 安装指北</p>
+<a id="more"></a>
+
+<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><p>从官方网站获取镜像，似乎被墙了？<br><a href="https://www.archlinux.org/" target="_blank" rel="noopener">https://www.archlinux.org/</a></p>
+<h2 id="启动镜像"><a href="#启动镜像" class="headerlink" title="启动镜像"></a>启动镜像</h2><p>VMware 没有 Arch 的选项，所以我们只能选择 Linux 内核 4.X 更高。</p>
+<p>如果是对实体机安装，则需要其他工具，比如 LinuxLive USB Creator</p>
+<h2 id="选择-Boot-Arch-Linux-x86-64"><a href="#选择-Boot-Arch-Linux-x86-64" class="headerlink" title="选择 Boot Arch Linux (x86_64)"></a>选择 Boot Arch Linux (x86_64)</h2><p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/arch/QQ%E6%88%AA%E5%9B%BE20180617073025.png" srcset="undefined" alt=""></p>
+<h2 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h2><p>查看块设备</p>
+<pre><code class="bash">lsblk</code></pre>
+<p>然后发现是 sda，那么我们直接对 <code>/dev/sda</code> 进行分区</p>
+<pre><code class="bash">fdisk /dev/sda</code></pre>
+<p>按 n 新建分区，根据对应操作即可。</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/arch/QQ%E6%88%AA%E5%9B%BE20180617074247.png" srcset="undefined" alt=""></p>
+<h2 id="挂载硬盘"><a href="#挂载硬盘" class="headerlink" title="挂载硬盘"></a>挂载硬盘</h2><p>如果有其他分区 也需要挂载</p>
+<pre><code class="bash">mkfs.ext4 /dev/sda
+mount /dev/sda /mnt</code></pre>
+<h2 id="安装基本工具"><a href="#安装基本工具" class="headerlink" title="安装基本工具"></a>安装基本工具</h2><pre><code class="bash">pacstrap /mnt base base-devel</code></pre>
+<h2 id="一些设置"><a href="#一些设置" class="headerlink" title="一些设置"></a>一些设置</h2><p>生成一个 fstab 文件来规定磁盘分区、块设备，或者远程文件系统是如何挂载进文件系统中的。</p>
+<pre><code class="bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></pre>
+<p>进入 chroot 环境，这样可以为当前进程以及子进程切换当前根目录。</p>
+<pre><code class="bash">arch-chroot /mnt</code></pre>
+<p>设置时间</p>
+<pre><code class="bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc --utc</code></pre>
+<p>设置语言</p>
+<pre><code class="bash">nano /etc/locale.gen </code></pre>
+<p>然后将 en_US UTF8 这行注释掉，或者是换成你想要的语言。（推荐英语）</p>
+<pre><code class="bash">locale-gen
+echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
+export LANG=en_US.UTF-8</code></pre>
+<h2 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h2><pre><code class="bash">echo &lt;主机名&gt; &gt; /etc/hostname</code></pre>
+<p>接着向 <code>/etc/hosts</code> 文件添加 hosts 条目。</p>
+<pre><code class="text">#&lt;ip-address&gt;    &lt;hostname.domain.org&gt;    &lt;hostname&gt;
+127.0.0.1    localhost.localdomain    localhost
+::1        localhost.localdomain    localhost
+127.0.1.1    &lt;主机名&gt;.localdomain    &lt;主机名&gt;</code></pre>
+<h2 id="设置-root-密码"><a href="#设置-root-密码" class="headerlink" title="设置 root 密码"></a>设置 root 密码</h2><pre><code class="bash">passwd</code></pre>
+<h2 id="安装-GRUB-引导"><a href="#安装-GRUB-引导" class="headerlink" title="安装 GRUB 引导"></a>安装 GRUB 引导</h2><pre><code class="bash">pacman -S grub os-prober
+grub-install --target=i386-pc /dev/sdX    # sdX 为目标磁盘
+grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
+<h2 id="快结束辣"><a href="#快结束辣" class="headerlink" title="快结束辣"></a>快结束辣</h2><pre><code class="bash">exit # 回到安装环境
+umount -R /mnt
+reboot</code></pre>
+<p>到这里，系统其实已经装好啦。</p>
+<h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><pre><code class="bash">ip link</code></pre>
+<p>yournetworkname 在那个方括号前面</p>
+<pre><code class="bash">vi /etc/systemd/network/yournetworkname.network</code></pre>
+<p>添加下述内容</p>
+<pre><code class="text">[Match]
+name=en*
+[Network]
+DHCP=yes</code></pre>
+<pre><code class="bash">systemctl restart systemd-networkd
+systemctl enable systemd-networkd</code></pre>
+<p>将下面这两句话加进 /etc/resolv.conf 中</p>
+<pre><code class="text">nameserver 8.8.8.8
+nameserver 8.8.4.4</code></pre>
+<h2 id="安装驱动"><a href="#安装驱动" class="headerlink" title="安装驱动"></a>安装驱动</h2><pre><code class="bash">pacman -S &lt;驱动包&gt;</code></pre>
+<p>官方支持的驱动包：</p>
+<ul>
+<li>通用：xf86-video-vesa</li>
+<li>因特尔系：xf86-video-intel</li>
+<li>AMD/ATI 系：xf86-video-ati</li>
+<li>nVidia 系：<br>  GeForce 400 及更新系列：nvidia<br>  2006 至 2010 年间 GeForce 8000/9000、ION 和 100-300 系列 [NV5x, NV8x, NV9x and NVAx]：nvidia-340xx<br>  2004 至 2006 年间 GeForce 6000/7000 系列 [NV4x and NV6x]：nvidia-304xx</li>
+</ul>
+<h2 id="安装桌面环境"><a href="#安装桌面环境" class="headerlink" title="安装桌面环境"></a>安装桌面环境</h2><pre><code class="bash">pacman -S xorg xorg-server
+pacman -S gnome gnome-extra
+systemctl start gdm.service
+systemctl enable gdm.service</code></pre>
+<p>如果 systemctl start gdm.service 死机了 建议重启 qwq</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/linux">linux</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  ');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Archlinux 安装指北&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <link rel="icon" type="image/png" href="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="EDGsheryl">
+  <meta name="keywords" content="">
+  <title>JetBrains Quest Challenge 2 ~ 冰糖雪梨</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>冰糖雪梨</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/quest-title-2.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期五, 三月 13日 2020, 12:00 中午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    609 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>根据上一轮的 Quest 的最后邮件提示，我们可以知道第二轮举行时间为 2020-03-11 19:00:00</p>
+<a id="more"></a>
+
+<p>第二轮的题目也是一则推文</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/twitter-2.png" srcset="undefined" alt=""></p>
+<h1 id="Reverse-the-string"><a href="#Reverse-the-string" class="headerlink" title="Reverse the string"></a>Reverse the string</h1><p>我们可以看出这可能是一个反转的字符串</p>
+<pre><code class="python">print(&quot;.spleh A+lrtC/dmC .thgis fo tuo si ti semitemos ,etihw si txet nehw sa drah kooL .tseretni wohs dluohs uoy ecalp a si ,dessecorp si xat hctuD erehw esac ehT .sedih tseuq fo txen eht erehw si ,deificeps era segaugnal cificeps-niamod tcudorp ehT&quot;[::-1])</code></pre>
+<p>可以得到</p>
+<pre><code class="Text">The product domain-specific languages are specified, is where the next of quest hides. The case where Dutch tax is processed, is a place you should show interest. Look hard as when text is white, sometimes it is out of sight. Cmd/Ctrl+A helps.</code></pre>
+<h1 id="Hidden-Words"><a href="#Hidden-Words" class="headerlink" title="Hidden Words"></a>Hidden Words</h1><p>看起来是进入 <a href="https://www.jetbrains.com/mps/" target="_blank" rel="noopener">https://www.jetbrains.com/mps/</a> 这个页面了</p>
+<p>提到了 Dutch Tax，我们到相关公司机构的最佳实践页面寻找线索，果然在 PDF 界面发现了隐藏的文字</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/hidden-words.png" srcset="undefined" alt=""></p>
+<p>复制出这段话</p>
+<pre><code class="text">This is our 20th year as a company,
+we have shared numbers in our JetBrains
+Annual report, sharing the section with
+18,650 numbers will progress your quest.</code></pre>
+<p>实际上这个页面有点难找，我是根据搜索结果，然后推断出今年的 URL <a href="https://www.jetbrains.com/company/annualreport/2019/" target="_blank" rel="noopener"></a></p>
+<h1 id="Sharing-the-section"><a href="#Sharing-the-section" class="headerlink" title="Sharing the section"></a>Sharing the section</h1><p>根据上面数字提示 18,650 我在页面搜索了 18K、18650 等等，都没找到结果，最后发现有个 18000，其实图中数字加起来是 18650</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/sharing.png" srcset="undefined" alt=""></p>
+<p>点击上方的 sharing 按钮就可以得到下一个提示了</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/sharing-2.png" srcset="undefined" alt=""></p>
+<pre><code class="text">I have found the JetBrains Quest! 
+Sometimes you just need to look closely at the Haskell language, Hello,World! 
+in the hackathon lego brainstorms project https://blog.jetbrains.com/blog/2019/11/22/jetbrains-7th-annual-hackathon/ 
+
+#JetBrainsQuest https://www.jetbrains.com/company/annualreport/2019/ 来自 @JetBrains</code></pre>
+<h1 id="Hello-World-with-Haskell"><a href="#Hello-World-with-Haskell" class="headerlink" title="Hello, World with Haskell"></a>Hello, World with Haskell</h1><p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/comic.png" srcset="undefined" alt=""></p>
+<p>仔细看上方其实是有一段文字的，火星英文！</p>
+<pre><code class="text">d1D j00 kN0w J378r41n2 12 4lW4Y2 H1R1N9? ch3CK 0u7 73h K4r33r2 P493 4nD 533 1f 7H3r3 12 4 J08 F0r J00 0R 4 KW357 cH4LL3n93 70 90 fUr7h3r @ l3457.</code></pre>
+<pre><code class="text">Did you know Jetbrains is always hiring? Check out the careers page and see if there is a job for you or for newest challenge to go further at least.</code></pre>
+<h1 id="Find-the-job"><a href="#Find-the-job" class="headerlink" title="Find the job"></a>Find the job</h1><p>找到 Hiring 的界面，然后去 Jobs 的页面寻找，发现有一个 <code>Fearless Quester</code> 的职位</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/job.png" srcset="undefined" alt=""></p>
+<p>里面的有用信息应该如下：</p>
+<pre><code class="text">To progress with your quest what you’ll need:
+- To check out what we have for game developers.
+- Be geeky enough to remember how you used to cheat at Konami games.
+- Try cheating on the page.</code></pre>
+<h1 id="Konami-Cheating-Code"><a href="#Konami-Cheating-Code" class="headerlink" title="Konami Cheating Code"></a>Konami Cheating Code</h1><p>这一步其实挺难的，你得知道有这么一个地方，然后输入秘籍，经典的 上上下下左右左右 BABA</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/game_page.png" srcset="undefined" alt=""></p>
+<p>然后通关小游戏就能获得奖励辣</p>
+<p><img src="https://edgsheryl.oss-cn-hangzhou.aliyuncs.com/jetbrains-quest/cong-letter2.png" srcset="undefined" alt=""></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/CTF">CTF</a>
+                
+                  <a class="hover-with-bg" href="/tags/JetBrains">JetBrains</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  ');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "JetBrains Quest Challenge 2&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>
